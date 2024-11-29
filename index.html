@@ -42,6 +42,54 @@
             position: relative;
             bottom: 0;
             width: 100%;
+        }        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Lightbox styling */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        /* Close button on hover */
+        .close-btn:hover {
+            background-color: rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
@@ -81,9 +129,182 @@
 
 <section id="gallery">
     <h2>Галерия</h2>
-    <ul>
-        В процес на качване...
-    </ul>
+    
+    <h3>Къща 1</h3>
+    <h4>Къща 1: ВиК инсталация и монтаж</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house1/1-vik/boiler.jpg" alt="Boiler" class="gallery-item">
+        <img src="gallery/house1/1-vik/mivka1.jpg" alt="Mivka 1" class="gallery-item">
+        <img src="gallery/house1/1-vik/mivka2.jpg" alt="Mivka 2" class="gallery-item">
+        <img src="gallery/house1/1-vik/truba1.jpg" alt="Truba 1" class="gallery-item">
+        <img src="gallery/house1/1-vik/mivka3.jpg" alt="Mivka 3" class="gallery-item">
+        <img src="gallery/house1/1-vik/peralnq.jpg" alt="Peralnq" class="gallery-item">
+    </div>
+
+    <h4>Къща 1: Електрически инсталация и монтаж</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house1/2-el/kanali.jpg" alt="Kanali" class="gallery-item">
+        <img src="gallery/house1/2-el/kontakt.jpg" alt="Kontakt" class="gallery-item">
+        <img src="gallery/house1/2-el/lampa1.jpg" alt="Lampa 1" class="gallery-item">
+        <img src="gallery/house1/2-el/lampa2.jpg" alt="Lampa 2" class="gallery-item">
+        <img src="gallery/house1/2-el/lampa3.jpg" alt="Lampa 3" class="gallery-item">
+        <img src="gallery/house1/2-el/tablo.jpg" alt="Tablo" class="gallery-item">
+        <img src="gallery/house1/2-el/vent.jpg" alt="Ventilator" class="gallery-item">
+    </div>
+
+    <h4>Къща 1: Баицване и лакиране</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house1/4-lak/peika1.jpg" alt="Peika 1" class="gallery-item">
+        <img src="gallery/house1/4-lak/peika2.jpg" alt="Peika 2" class="gallery-item">
+        <img src="gallery/house1/4-lak/porta.jpg" alt="Porta" class="gallery-item">
+        <img src="gallery/house1/4-lak/shkaf1-1.jpg" alt="Negotov Shkaf" class="gallery-item">
+        <img src="gallery/house1/4-lak/shkaf1-2.jpg" alt="Gotov Shkaf" class="gallery-item">
+        <img src="gallery/house1/4-lak/stulbishte1.jpg" alt="Stulbishte1 1" class="gallery-item">
+        <img src="gallery/house1/4-lak/stulbishte2.jpg" alt="Stulbishte 2" class="gallery-item">
+        <img src="gallery/house1/4-lak/tavan.jpg" alt="Tavan" class="gallery-item">
+    </div>
+
+    <h4>Къща 1: Вътрешно изолиране и изграждане на подове</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house1/5-insulation/pom1-1.jpg" alt="Pokriv 1" class="gallery-item">
+        <img src="gallery/house1/5-insulation/pom1-2.jpg" alt="Pokriv 2" class="gallery-item">
+        <img src="gallery/house1/5-insulation/pom2-1.jpg" alt="Pokriv 3" class="gallery-item">
+        <img src="gallery/house1/5-insulation/pom2-2.jpg" alt="Pokriv 4" class="gallery-item">
+        <img src="gallery/house1/5-insulation/pom3-1.jpg" alt="Pokriv 5" class="gallery-item">
+        <img src="gallery/house1/5-insulation/pom3-2.jpg" alt="Pokriv 6" class="gallery-item">
+        <img src="gallery/house1/5-insulation/pom4.jpg" alt="Pokriv 7" class="gallery-item">
+        <img src="gallery/house1/5-insulation/pom5.jpg" alt="Spalnq" class="gallery-item">
+    </div>
+
+    <h4>Къща 1: Други (монтаж на кухни и рафтове, подреждане на плочници, остъкляване на прозорци)</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house1/6-others/kuhnq1-1.jpg" alt="Kunhq 1" class="gallery-item">
+        <img src="gallery/house1/6-others/kuhnq1-2.jpg" alt="Kunhq 1" class="gallery-item">
+        <img src="gallery/house1/6-others/pechka.jpg" alt="Pechka" class="gallery-item">
+        <img src="gallery/house1/6-others/kuhnq2.jpg" alt="Kunhq 2" class="gallery-item">
+        <img src="gallery/house1/6-others/raft1.jpg" alt="Raft 1" class="gallery-item">
+        <img src="gallery/house1/6-others/raft2.jpg" alt="Raft 2" class="gallery-item">
+        <img src="gallery/house1/6-others/plochnik1.jpg" alt="Plochnik" class="gallery-item">
+        <img src="gallery/house1/6-others/prozorez1.jpg" alt="Prozorez 1" class="gallery-item">
+        <img src="gallery/house1/6-others/prozorez2.jpg" alt="Prozorez 2" class="gallery-item">
+        <img src="gallery/house1/6-others/prozorez3.jpg" alt="Prozorez 3" class="gallery-item">
+        <img src="gallery/house1/6-others/prozorez4.jpg" alt="Prozorez 4" class="gallery-item">
+        <img src="gallery/house1/6-others/prozorez5.jpg" alt="Prozorez 5" class="gallery-item">
+    </div>
+
+
+    <h3>Апартамент 1</h3>
+    <h4>Апартамент 1: ВиК монтаж</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/apartment1/1-vik/bateriq1.jpg" alt="Bateriq 1" class="gallery-item">
+        <img src="gallery/apartment1/1-vik/bateriq2.jpg" alt="Bateriq 2" class="gallery-item">
+        <img src="gallery/apartment1/1-vik/bateriq3.jpg" alt="Bateriq 3" class="gallery-item">
+        <img src="gallery/apartment1/1-vik/mivka1.jpg" alt="Mivka" class="gallery-item">
+    </div>
+
+    <h4>Апартамент 1: Електрически монтаж</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/apartment1/2-el/tablo.jpg" alt="Tablo" class="gallery-item">
+        <img src="gallery/apartment1/2-el/lampa1.jpg" alt="Lampa 1" class="gallery-item">
+        <img src="gallery/apartment1/2-el/lampa2.jpg" alt="Lampa 2" class="gallery-item">
+        <img src="gallery/apartment1/2-el/lampa3.jpg" alt="Lampa 3" class="gallery-item">
+        <img src="gallery/apartment1/2-el/lampa4.jpg" alt="Lampa 4" class="gallery-item">
+    </div>
+
+    <h4>Апартамент 1: Боядисване на тераси и огради</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/apartment1/3-paint/terasa1.jpg" alt="Terasa 1" class="gallery-item">
+        <img src="gallery/apartment1/3-paint/terasa2.jpg" alt="Terasa 2" class="gallery-item">
+        <img src="gallery/apartment1/3-paint/terasa3.jpg" alt="Terasa 3" class="gallery-item">
+        <img src="gallery/apartment1/3-paint/ograda1.jpg" alt="Parapet" class="gallery-item">
+    </div>
+
+    <h4>Апартамент 1: Други (монтаж на кухня, рафтове, и други стенни елементи като огледала, сапунерки и т.н.)</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/apartment1/6-others/kuhnq1.jpg" alt="Kunhq 1" class="gallery-item">
+        <img src="gallery/apartment1/6-others/raftove.jpg" alt="Raftove" class="gallery-item">
+        <img src="gallery/apartment1/6-others/ogledalo.jpg" alt="Ogledalo" class="gallery-item">
+        <img src="gallery/apartment1/6-others/sapunerka.jpg" alt="Sapunerka" class="gallery-item">
+        <img src="gallery/apartment1/6-others/chashka.jpg" alt="Chashka" class="gallery-item">
+    </div>
+
+
+    <h3>Къща 2</h3>
+    <h4>Къща 2: ВиК монтаж</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house2/1-vik/truba1.jpg" alt="Truba 1" class="gallery-item">
+        <img src="gallery/house2/1-vik/boiler.jpg" alt="Boiler" class="gallery-item">
+        <img src="gallery/house2/1-vik/kapkovo1.jpg" alt="Kapkovo 1" class="gallery-item">
+        <img src="gallery/house2/1-vik/kapkovo2.jpg" alt="Kapkovo 2" class="gallery-item">
+    </div>    
+
+    <h4>Къща 2: Електрически монтаж</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house2/2-el/lampa1.jpg" alt="Lampa 1" class="gallery-item">
+        <img src="gallery/house2/2-el/lampa2.jpg" alt="Lampa 2" class="gallery-item">
+        <img src="gallery/house2/2-el/lampa3.jpg" alt="Lampa 3" class="gallery-item">
+        <img src="gallery/house2/2-el/lampa4.jpg" alt="Lampa 4" class="gallery-item">
+    </div>
+
+    <h4>Къща 2: Други (монтаж на кухня и стелажи)</h4>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house2/6-others/kuhnq1.jpg" alt="Kunhq 1" class="gallery-item">
+        <img src="gallery/house2/6-others/stelaj.jpg" alt="Stelaj" class="gallery-item">
+    </div>
+
+    <h3>Къща 3</h3>
+    <div class="gallery">
+        <!-- Add your images here -->
+        <img src="gallery/house3/house3.jpg" alt="House 3" class="gallery-item">
+    </div>
+    <h4>... е в процес на работа.</h4>
+
+    <!-- Lightbox for enlarged image -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <img id="lightboxImage" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        // Get references to DOM elements
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeBtn = document.getElementById('closeBtn');
+
+        // Event listener for each gallery item (image)
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // When an image is clicked, show the lightbox
+                lightbox.style.display = 'flex';
+                lightboxImage.src = item.src;
+            });
+        });
+
+        // Event listener for closing the lightbox
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Close the lightbox if clicked outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
     <a href="#begin">Към началото</a>
 </section>
 
